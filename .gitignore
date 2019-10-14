@@ -106,3 +106,5 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+!trained_weights_final.h5

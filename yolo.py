@@ -20,7 +20,7 @@ from yolo3.utils import letterbox_image
 
 class YOLO(object):
     _defaults = {
-        "model_path": 'logs/000/trained_weights_final.h5',
+        "model_path": 'model_data/trained_weights_final.h5',
         "anchors_path": 'model_data/tiny_yolo_anchors.txt',
         "classes_path": 'model_data/cat_classes.txt',
         "score": 0.2,
