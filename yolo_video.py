@@ -5,6 +5,20 @@ from PIL import Image
 from yolo import YOLO, detect_video
 
 
+def detect_single_img(yolo):
+    r_image = None
+    img = input('Input image filename:')
+    try:
+        image = Image.open(img)
+    except:
+        print('Open Error! Try again!')
+    else:
+        r_image = yolo.detect_image(image)
+        r_image.show()
+    yolo.close_session()
+    return r_image
+
+
 def detect_img(yolo):
     while True:
         img = input('Input image filename:')
@@ -18,19 +32,6 @@ def detect_img(yolo):
             r_image.show()
     yolo.close_session()
 
-
-def detect_single_img(yolo):
-    r_image = None
-    img = input('Input image filename:')
-    try:
-        image = Image.open(img)
-    except:
-        print('Open Error! Try again!')
-    else:
-        r_image = yolo.detect_image(image)
-        r_image.show()
-    yolo.close_session()
-    return r_image
 
 FLAGS = None
 
